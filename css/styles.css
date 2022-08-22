@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(106,68,155);
+}
+
+.imagen {
+    background-image: url(/images/fondo1.jpg);
+    background-size: 100% 100%;
+    height: 600px;
+    width: 100%;
+}
+
+.letras-estilo {
+    color:white;
+}
+
+.centrar-iconos {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.btn-cursor {
+    cursor: pointer;
+}
+
+.color-puntaje {
+    background-color: #fff;
+    color: black;
+    height: fit-content;
+}
+
+/* Grid */
+.container {  
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". . ."
+    "opcion1 opcion2 opcion3"
+    ". . .";
+}
+
+.opcion1 { 
+    grid-area: opcion1; 
+}
+
+.opcion2 { 
+    grid-area: opcion2; 
+}
+
+.opcion3 { 
+    grid-area: opcion3; 
+}
+
+.esconder {
+    display: none;
+}
+
+/* Modal */
+.modal,
+.modal2 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+}
+
+.modal-container, 
+.modal-container2 {
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 1rem 2rem;
+}
+
+.modal-close, 
+.modal-close2 {
+    background-color: rgb(74, 139, 236);
+    border: 1px solid;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: background-color .3s;
+    cursor: pointer;
+}
+
+.modal-close:hover, 
+.modal-close2:hover {
+    color:rgb(74, 139, 236);
+    background-color: #fff;
+}
+
+.modal-show, 
+.modal-show2 {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+}
+
