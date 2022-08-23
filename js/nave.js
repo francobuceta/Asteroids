@@ -69,4 +69,11 @@ class Nave {
             return false;
         }
     };
+
+    noChocar(asteroid) {
+        let distancia = dist(this.posicion.x, this.posicion.y, asteroid.posicion.x, asteroid.posicion.y);
+        if (distancia < this.tamanio + asteroid.tamanio) {
+            return false;
+        }
+    };
 }

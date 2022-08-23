@@ -5,7 +5,7 @@ let frames = [];
 let numFrames = 45;
 let whichFrame = 1;
 let puntaje = 0;
-let level = 1;
+let level = 0;
 const esconderSection = document.getElementById("section");
 const btnComenzar = document.getElementById("comenzar");
 let canvas;
@@ -145,7 +145,8 @@ function nivel() {
 function reseteo() {
     nave.vidas = 3;
     puntaje = 0;
-    level = 1;
+    level = 0;
+    asteroides = [];
 } 
 
 function gameOver() {
