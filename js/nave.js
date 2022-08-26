@@ -38,7 +38,7 @@ class Nave {
         translate(this.posicion.x, this.posicion.y); //Centrar al medio la nave
         rotate(this.head + PI / 2); //Rotacion de la nave       
         
-        if (this.escudo > 0) {
+        if (this.escudo > 0) {  //Color de relleno de la nave
             let colorEscudo = random(map(this.escudo, 0, tiempoEscudo, 255, 0), 255);
             fill(colorEscudo, colorEscudo, 255);
         } else {
@@ -59,7 +59,7 @@ class Nave {
         this.head += this.rotacion;
     };
 
-    bordes() {
+    bordes() {  //Funcion para que cuando la nave pase los bordes vuelva a aparecer en el otro extremo.
         if (this.posicion.x > width + this.tamanio) {
             this.posicion.x = -this.tamanio;
         } else if (this.posicion.x < -this.tamanio) {
@@ -72,7 +72,7 @@ class Nave {
         }
     };
 
-    chocar(asteroid) {
+    chocar(asteroid) {  //Funcion de colision con asteroides.
         if (this.escudo > 0) {
             return false;
         }
