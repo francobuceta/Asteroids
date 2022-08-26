@@ -8,7 +8,7 @@ body {
 }
 
 .imagen {
-    background-image: url(../images/fondo1.jpg);
+    background-image: url(../images/fondo2.jpg);
     background-size: 100% 100%;
     height: 600px;
     width: 100%;
@@ -26,6 +26,11 @@ body {
 
 .btn-cursor {
     cursor: pointer;
+    transition: transform 1s;
+}
+
+.btn-cursor:hover {
+    transform: rotateY(180deg);
 }
 
 .color-puntaje {
@@ -35,7 +40,7 @@ body {
 }
 
 /* Grid */
-.container {  
+.contenedor-section {  
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -63,7 +68,7 @@ body {
     display: none;
 }
 
-/* Modal */
+/* Modales */
 .modal,
 .modal2 {
     position: fixed;
@@ -91,7 +96,8 @@ body {
 
 .modal-close, 
 .modal-close2 {
-    background-color: rgb(74, 139, 236);
+    background-color: rgb(230, 227, 207);
+    color: #000;
     border: 1px solid;
     border-radius: 3px;
     display: inline-block;
@@ -103,8 +109,8 @@ body {
 
 .modal-close:hover, 
 .modal-close2:hover {
-    color:rgb(74, 139, 236);
-    background-color: #fff;
+    color: #fff;
+    background-color: rgb(73, 88, 151);
 }
 
 .modal-show, 
@@ -112,5 +118,48 @@ body {
     opacity: 1;
     pointer-events: unset;
     transition: opacity .6s;
+}
+
+
+/* Acomodar boton de puntajes altos */
+
+
+#mayorPuntaje {
+    position: relative;
+}
+
+.alinear-boton {
+    position: absolute;
+    transform: translate(400%, 20%);
+}
+
+.texto-mobile {
+    display: none;
+    background-color: #fff;
+}
+
+
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .contenedor-section {  
+        grid-template-areas:
+        ". opcion1 ."
+        ". opcion2 ."
+        ". opcion3 .";
+    }
+
+    .texto-mobile {
+        display: block;
+    }
+
+    #footer {
+        margin-top: 80px!important;
+    }
+
+    header div a img {
+        width: 20rem;
+    }
 }
 

@@ -59,9 +59,9 @@ class Asteroid {
     };
 
     romper() {
-        let newA = [];
-        newA[0] = new Asteroid(this.posicion, this.tamanio);
-        newA[1] = new Asteroid(this.posicion, this.tamanio);
-        return newA;
+        let nuevoA = [];
+        nuevoA[0] = new Asteroid(this.posicion, this.tamanio);
+        nuevoA[1] = new Asteroid(this.posicion, this.tamanio);
+        return nuevoA;
     };
 }

@@ -1,7 +1,7 @@
 //Nave
 
 class Nave {
-    constructor(posicion, tamanio, head, rotacion, velocidad, aceleracion, vidas) {
+    constructor(posicion, tamanio, head, rotacion, velocidad, aceleracion, vidas, escudo) {
         this.posicion = posicion; //Posicion en medio de la pantalla
         this.tamanio = tamanio; //Tamaño de la nave
         this.head = head; //Cabeza de la nave
@@ -9,6 +9,7 @@ class Nave {
         this.velocidad = velocidad; //Velocidad de la nave
         this.aceleracion = aceleracion;
         this.vidas = vidas;
+        this.escudo = escudo;
     }
     
     actualizar() {
@@ -16,6 +17,9 @@ class Nave {
         this.velocidad.mult(0.99); //Agrega friccion a la velocidad
         if (this.aceleracion) { //Chequear si esta acelerando la nave
             this.acelerar();
+        }
+        if (this.escudo > 0) {
+            this.escudo -= 1;
         }
     };
 
@@ -33,8 +37,15 @@ class Nave {
         push(); //Guarda el estado actual de traslacion y rotacion
         translate(this.posicion.x, this.posicion.y); //Centrar al medio la nave
         rotate(this.head + PI / 2); //Rotacion de la nave       
-        fill(0); //Fill 0 para que la nave tape las balas y se vean que salen de la cabeza
-        stroke(173, 71, 194); //Le pongo bordes blancos a la nave
+        
+        if (this.escudo > 0) {
+            let colorEscudo = random(map(this.escudo, 0, tiempoEscudo, 255, 0), 255);
+            fill(colorEscudo, colorEscudo, 255);
+        } else {
+            fill(0);
+        };
+        
+        stroke(173, 71, 194);
         strokeWeight(3);
         triangle(-this.tamanio, this.tamanio, this.tamanio, this.tamanio, 0, -this.tamanio); //Darle forma a la nave
         pop(); //Restaura el estado de traslacion y rotacion
@@ -62,17 +73,15 @@ class Nave {
     };
 
     chocar(asteroid) {
+        if (this.escudo > 0) {
+            return false;
+        }
+        
         let distancia = dist(this.posicion.x, this.posicion.y, asteroid.posicion.x, asteroid.posicion.y);
+        
         if (distancia < this.tamanio + asteroid.tamanio) {
             return true;
         } else {
-            return false;
-        }
-    };
-
-    noChocar(asteroid) {
-        let distancia = dist(this.posicion.x, this.posicion.y, asteroid.posicion.x, asteroid.posicion.y);
-        if (distancia < this.tamanio + asteroid.tamanio) {
             return false;
         }
     };
