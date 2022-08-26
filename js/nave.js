@@ -12,18 +12,17 @@ class Nave {
         this.escudo = escudo;
     }
     
-    actualizar() {
+    actualizar() {  //Actualiza lo que este haciendo la nave
         this.posicion.add(this.velocidad);
         this.velocidad.mult(0.99); //Agrega friccion a la velocidad
-        if (this.aceleracion) { //Chequear si esta acelerando la nave
-            this.acelerar();
-        }
+        this.aceleracion && this.acelerar();
+        
         if (this.escudo > 0) {
             this.escudo -= 1;
         }
     };
 
-    empuje(booleano) {
+    empuje(booleano) { //Empujar la nave
         this.aceleracion = booleano;
     };
 
@@ -33,7 +32,7 @@ class Nave {
         this.velocidad.add(fuerza);
     };
 
-    render() {
+    render() {  //Dibujo la nave
         push(); //Guarda el estado actual de traslacion y rotacion
         translate(this.posicion.x, this.posicion.y); //Centrar al medio la nave
         rotate(this.head + PI / 2); //Rotacion de la nave       
@@ -45,9 +44,9 @@ class Nave {
             fill(0);
         };
         
-        stroke(173, 71, 194);
-        strokeWeight(3);
-        triangle(-this.tamanio, this.tamanio, this.tamanio, this.tamanio, 0, -this.tamanio); //Darle forma a la nave
+        stroke(173, 71, 194); //Color a los bordes
+        strokeWeight(3); //Grosor de los bordes
+        triangle(-this.tamanio, this.tamanio, this.tamanio, this.tamanio, 0, -this.tamanio); //Darle forma de triangulo a la nave
         pop(); //Restaura el estado de traslacion y rotacion
     };
 

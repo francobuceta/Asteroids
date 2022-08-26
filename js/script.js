@@ -108,15 +108,19 @@ function draw() {
 
 //Teclas de interaccion
 function keyPressed() {
-    if (keyCode == 74) {  
-        balas.push (new Balas(nave.posicion, nave.head));
-    }
-    else if (keyCode == 68) {
-        nave.establecerRotacion(0.1);
-    } else if (keyCode == 65) {
-        nave.establecerRotacion(-0.1);
-    } else if (keyCode == 87) {
-        nave.empuje(true);
+    switch (keyCode) {
+        case 74:
+            balas.push (new Balas(nave.posicion, nave.head));
+            break;
+        case 68:
+            nave.establecerRotacion(0.1);
+            break;
+        case 65:
+            nave.establecerRotacion(-0.1);
+            break;
+        case 87:
+            nave.empuje(true);
+            break;
     }
 };
 
@@ -172,6 +176,7 @@ function mostrarPuntos(array) {  //Mostrar datos alojados en data.json.
             </div>`
             contenedor.innerHTML += informacion;
     }) 
+    contenedor.classList.toggle("ocultar");
 };
 
 //Mostrar y ocultar las diferentes secciones.
@@ -199,11 +204,7 @@ function setearStorage() {  //Establecer puntaje en local storage.
 
 function traerStorage() {  //Traer el puntaje mas alto del local storage.
     let traerPuntaje = localStorage.getItem(guardarPuntaje); 
-    if (traerPuntaje == null) {
-        puntajeAlto = 0;
-    } else {
-        puntajeAlto = parseInt(traerPuntaje);
-    }
+    traerPuntaje == null ? puntajeAlto = 0 : puntajeAlto = parseInt(traerPuntaje);
 };
 
 //Dibujar los textos en el canvas.
@@ -211,9 +212,9 @@ function escribirTextos() {
     text("SCORE: " + puntaje, width/2, 50); 
     fill(255, 255, 255);
     textSize(35);
-    text("LIVES: " + nave.vidas, 50, 50);
-    text("BEST: " + puntajeAlto, 1125, 50);
-    text("LEVEL " + nivel, width/2, 600);
+    text("LIVES: " + nave.vidas, width/20, 50);
+    text("BEST: " + puntajeAlto, width/2 + 450, 50);
+    text("LEVEL " + nivel, width/2, height - 20);
 };
 
 //Mostrar los frames de explosion cuando colisiona la nave.

@@ -18,17 +18,17 @@ class Asteroid {
 
         this.velocidad = p5.Vector.random2D();//Obtener un vector aleatorio
         this.tamanioVertice = floor(random(5, 15));
-        this.offset = []; //Array para cada uno de los vertices del asteroide y poder darle una mejor forma
+        this.forma = []; //Array para cada uno de los vertices del asteroide y poder darle una mejor forma
         for (let i = 0; i < this.tamanioVertice; i++) {
-            this.offset[i] = random(-this.tamanio * 0.5, this.tamanio * 0.5);
+            this.forma[i] = random(-this.tamanio * 0.5, this.tamanio * 0.5);
         }
     }
     
-    actualizar() {
+    actualizar() {  //Actualiza la velocidad de los asteroides
         this.posicion.add(this.velocidad);
     };
 
-    render() {
+    render() {  //Dibujo los asteroides
         push();
         stroke(173, 71, 194);
         noFill();
@@ -36,7 +36,7 @@ class Asteroid {
         beginShape(); //Empiezo la grabación de vértices para una figura
         for (let i = 0; i < this.tamanioVertice; i++) { //Añado forma al asteroide
             let angulo = map(i, 0, this.tamanioVertice, 0, TWO_PI); // Saco el angulo, TWO_PI = 360grados
-            let a = (this.tamanio + this.offset[i]);
+            let a = (this.tamanio + this.forma[i]);
             let x = a * cos(angulo);
             let y = a * sin(angulo);
             vertex(x, y);
@@ -45,7 +45,7 @@ class Asteroid {
         pop();
     };
 
-    bordes() {
+    bordes() {  //Funcion para que cuando los asteroides pasen los bordes vuelvan a aparecer en el otro extremo.
         if (this.posicion.x > width + this.tamanio) {
             this.posicion.x = -this.tamanio;
         } else if (this.posicion.x < -this.tamanio) {
@@ -58,7 +58,7 @@ class Asteroid {
         }
     };
 
-    romper() {
+    romper() {  //Funcion para que cuando el asteroide colisione se divida.
         let nuevoA = [];
         nuevoA[0] = new Asteroid(this.posicion, this.tamanio);
         nuevoA[1] = new Asteroid(this.posicion, this.tamanio);
