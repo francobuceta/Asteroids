@@ -31,14 +31,13 @@ function setup() {
     canvas.style("display", "none");
 };
 
-
 btnComenzar.onclick = function setup() {
     createCanvas(windowWidth, windowHeight);
     ocultarSecciones();
     nave = new Nave(createVector(width / 2, height / 2), 20, 0, 0, createVector(1, 0), false, 3, tiempoEscudo);
     asteroides.push (new Asteroid());
 
-    for (let i = 0; i < 5 + nivel; i++) {
+    for (let i = 0; i < 8 + nivel; i++) {
         asteroides.push (new Asteroid());
     }  
 
@@ -47,7 +46,6 @@ btnComenzar.onclick = function setup() {
     traerStorage();
     reseteo();
 };
-
 
 function draw() {
     background(0);
@@ -75,14 +73,14 @@ function draw() {
         asteroides[i].bordes();
     }
     
-    for (let i = balas.length - 1; i >= 0; i--) { //Recorro el array de balas en el dibujo
+    for (let i = balas.length - 1; i >= 0; i--) {  //Recorro el array de balas en el dibujo
         balas[i].render();
         balas[i].actualizar();
         
         if (balas[i].fueraDePantalla()) {
             balas.splice(i, 1);
         } else {
-            for (let j = asteroides.length - 1; j >= 0; j--) { //Bucle para la colision (dividir asteroide en dos)
+            for (let j = asteroides.length - 1; j >= 0; j--) {  //Bucle para la colision (dividir asteroide en dos)
                 if (balas[i].colision(asteroides[j])) {
                     if (asteroides[j].tamanio > 20) {
                         let nuevosAsteroides = asteroides[j].romper();
@@ -132,7 +130,7 @@ function keyReleased() {  //La nave no rota cuando se levanta la tecla.
 //Aumentar nivel y poner escudos.
 function aumentoNivel() {  
     if (asteroides.length == 0) {
-        for (let i = 0; i < 5 + nivel; i++) {
+        for (let i = 0; i < 8 + nivel; i++) {
             asteroides.push (new Asteroid());
         }
         nivel++;
@@ -164,7 +162,6 @@ btnPuntaje.addEventListener("click", ()=> {
         mostrarPuntos(data);
     })
 });
-
 
 function mostrarPuntos(array) {  //Mostrar datos alojados en data.json.
     contenedor.innerHTML = "";

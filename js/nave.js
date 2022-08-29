@@ -1,5 +1,3 @@
-//Nave
-
 class Nave {
     constructor(posicion, tamanio, head, rotacion, velocidad, aceleracion, vidas, escudo) {
         this.posicion = posicion; //Posicion en medio de la pantalla
@@ -33,9 +31,9 @@ class Nave {
     };
 
     render() {  //Dibujo la nave
-        push(); //Guarda el estado actual de traslacion y rotacion
-        translate(this.posicion.x, this.posicion.y); //Centrar al medio la nave
-        rotate(this.head + PI / 2); //Rotacion de la nave       
+        push();  //Graba la configuración actual de estilo de dibujo
+        translate(this.posicion.x, this.posicion.y);  //Centrar al medio la nave
+        rotate(this.head + PI / 2);  //Rotacion de la nave       
         
         if (this.escudo > 0) {  //Color de relleno de la nave
             let colorEscudo = random(map(this.escudo, 0, tiempoEscudo, 255, 0), 255);
@@ -46,8 +44,8 @@ class Nave {
         
         stroke(173, 71, 194); //Color a los bordes
         strokeWeight(3); //Grosor de los bordes
-        triangle(-this.tamanio, this.tamanio, this.tamanio, this.tamanio, 0, -this.tamanio); //Darle forma de triangulo a la nave
-        pop(); //Restaura el estado de traslacion y rotacion
+        triangle(-this.tamanio, this.tamanio, this.tamanio, this.tamanio, 0, -this.tamanio);  //Darle forma de triangulo a la nave
+        pop();  //Restaura esta configuración
     };
 
     establecerRotacion(a) {

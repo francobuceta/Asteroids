@@ -1,5 +1,3 @@
-//Asteroids 
-
 class Asteroid {
     constructor(posicion, tamanio) {
         this.tamanio = random(15, 50);
@@ -16,9 +14,9 @@ class Asteroid {
             this.tamanio = random(15, 50);
         }
 
-        this.velocidad = p5.Vector.random2D();//Obtener un vector aleatorio
+        this.velocidad = p5.Vector.random2D();  //Obtener un vector aleatorio
         this.tamanioVertice = floor(random(5, 15));
-        this.forma = []; //Array para cada uno de los vertices del asteroide y poder darle una mejor forma
+        this.forma = [];  //Array para cada uno de los vertices del asteroide y poder darle una mejor forma
         for (let i = 0; i < this.tamanioVertice; i++) {
             this.forma[i] = random(-this.tamanio * 0.5, this.tamanio * 0.5);
         }
@@ -33,15 +31,15 @@ class Asteroid {
         stroke(173, 71, 194);
         noFill();
         translate(this.posicion.x, this.posicion.y);
-        beginShape(); //Empiezo la grabación de vértices para una figura
-        for (let i = 0; i < this.tamanioVertice; i++) { //Añado forma al asteroide
-            let angulo = map(i, 0, this.tamanioVertice, 0, TWO_PI); // Saco el angulo, TWO_PI = 360grados
+        beginShape();  //Empiezo la grabación de vértices para una figura
+        for (let i = 0; i < this.tamanioVertice; i++) {  //Añado forma al asteroide
+            let angulo = map(i, 0, this.tamanioVertice, 0, TWO_PI);  // Saco el angulo, TWO_PI = 360grados
             let a = (this.tamanio + this.forma[i]);
             let x = a * cos(angulo);
             let y = a * sin(angulo);
             vertex(x, y);
         }
-        endShape(CLOSE); //Termina la grabación.
+        endShape(CLOSE);  //Termina la grabación.
         pop();
     };
 

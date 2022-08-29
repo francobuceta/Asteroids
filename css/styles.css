@@ -39,6 +39,11 @@ body {
     height: fit-content;
 }
 
+.texto-mobile {
+    display: none;
+    background-color: #fff;
+}
+
 /* Grid */
 .contenedor-section {  
     display: grid;
@@ -122,8 +127,6 @@ body {
 
 
 /* Acomodar boton de puntajes altos */
-
-
 #mayorPuntaje {
     position: relative;
 }
@@ -133,17 +136,11 @@ body {
     transform: translate(400%, 20%);
 }
 
-.texto-mobile {
-    display: none;
-    background-color: #fff;
-}
-
 .ocultar {
     display: none!important;
 }
 
 /* Media Queries */
-
 @media (max-width: 768px) {
     .contenedor-section {  
         grid-template-areas:

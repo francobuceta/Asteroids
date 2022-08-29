@@ -1,10 +1,8 @@
-//Balas 
-
 class Balas {
     constructor(posicionNave, angulo) {
         this.posicion = createVector(posicionNave.x, posicionNave.y);
         this.velocidad = p5.Vector.fromAngle(angulo);
-        this.velocidad.mult(10); //Multiplico la velocidad de las balas
+        this.velocidad.mult(10);  //Multiplico la velocidad de las balas
     }
     
     actualizar(){  //Actualiza posicion y velocidad de las balas
@@ -15,7 +13,7 @@ class Balas {
         push();
         stroke(255);
         strokeWeight(4);
-        point(this.posicion.x, this.posicion.y); //Dibujo las balas como puntos.
+        point(this.posicion.x, this.posicion.y);  //Dibujo las balas como puntos.
         pop();
     };
 
