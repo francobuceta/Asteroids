@@ -160,5 +160,9 @@ body {
     header div a img {
         width: 20rem;
     }
+
+    #mayorPuntaje {
+        display: none;
+    }
 }
 
