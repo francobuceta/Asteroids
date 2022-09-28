@@ -18,7 +18,7 @@ const contenedor = document.getElementById("contenedor");
 
 function preload() {
     for(let i = 1; i < numFrames; i++) {  //Cargo frames de imagenes para explosion
-        let archivo = "frames/" + "Frames " + "(" + i + ")" + ".png";
+        let archivo = `images/frames/Frames (${i}).png`;
         let frame = loadImage(archivo);
         frames.push(frame);
     }
