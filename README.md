@@ -1,6 +1,6 @@
 # Asteroids
 
-Este proyecto es un videojuego que se ejecuta desde el navegador, el mismo es mi propia versión del popular videojuego de arcade lanzado por Atari en el año 1979 y está creado en Vanilla JavaScript. 
+Este proyecto es un videojuego que se ejecuta desde el navegador, es mi propia versión del popular videojuego de arcade lanzado por Atari en el año 1979 y está creado en Vanilla JavaScript. 
 
 Deploy: [Asteroids](https://asteroids-atari.netlify.app/)
 
