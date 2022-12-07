@@ -14,7 +14,7 @@ Comencé creando los objetos de Nave, Asteroides y Balas, con algunas propiedade
 
 Luego para poder renderizar las figuras utilicé la librería "p5.js", y a partir de ahí pude seguir agregando funcionalidades, como las colisiones entre la nave y las balas con los asteroides, sus posiciones en pantalla, velocidades, y varias más.
 
-También a modo de prensetación creé una landing page, desde donde se puede acceder a jugar, conocer acerca de mí y la historia del videojuego.
+También a modo de prensentación creé una landing page, desde donde se puede acceder a jugar, conocer acerca de mí y la historia del videojuego.
 
 ## Construido con 🛠️
 
