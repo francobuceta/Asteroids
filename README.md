@@ -4,7 +4,7 @@ Este proyecto es un videojuego que se ejecuta desde el navegador, el mismo es mi
 
 Deploy: [Asteroids](https://asteroids-atari.netlify.app/)
 
-![](https://media.giphy.com/media/gQdHWEKSJQ5RlF9roN/giphy.gif)
+![](https://media.giphy.com/media/lesb20GqgiOlGq6zmY/giphy.gif)
 
 El proyecto surge como un desafío que me propuse a mi mismo, ya que siempre me gustaron los videojuegos y quería conocer la experiencia de crear uno propio, también me sirvió para presentar como entrega final para el curso de JavaScript en Coderhouse.
 
