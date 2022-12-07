@@ -33,12 +33,6 @@ body {
     transform: rotateY(180deg);
 }
 
-.color-puntaje {
-    background-color: #fff;
-    color: black;
-    height: fit-content;
-}
-
 .texto-mobile {
     display: none;
     background-color: #fff;
@@ -125,20 +119,6 @@ body {
     transition: opacity .6s;
 }
 
-
-/* Acomodar boton de puntajes altos */
-#mayorPuntaje {
-    position: relative;
-}
-
-.alinear-boton {
-    position: absolute;
-    transform: translate(400%, 20%);
-}
-
-.ocultar {
-    display: none!important;
-}
 
 /* Media Queries */
 @media (max-width: 768px) {

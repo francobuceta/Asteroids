@@ -13,8 +13,6 @@ const guardarPuntaje = "mayorPuntaje";
 const esconderSection = document.getElementById("section");
 const esconderFooter = document.getElementById("footer");
 const btnComenzar = document.getElementById("comenzar");
-const btnPuntaje = document.getElementById("mayorPuntaje");
-const contenedor = document.getElementById("contenedor");
 
 function preload() {
     for(let i = 1; i < numFrames; i++) {  //Cargo frames de imagenes para explosion
@@ -154,41 +152,15 @@ function gameOver() {
     }
 };
 
-//Fetch
-btnPuntaje.addEventListener("click", ()=> {
-    fetch("./js/data.json")
-    .then((response) => response.json())
-    .then((data) => {
-        mostrarPuntos(data);
-    })
-});
-
-function mostrarPuntos(array) {  //Mostrar datos alojados en data.json.
-    contenedor.innerHTML = "";
-    array.forEach((persona) => {
-            const informacion = `
-            <div style= 'padding: 10px'>
-                <p>Nombre: ${persona.nombre}</p>
-                <p>Puntaje: ${persona.puntaje}</p><br>
-            </div>`
-            contenedor.innerHTML += informacion;
-    }) 
-    contenedor.classList.toggle("ocultar");
-};
-
 //Mostrar y ocultar las diferentes secciones.
 function ocultarSecciones() {
     esconderSection.style.setProperty("display", "none", "important");
     esconderFooter.style.setProperty("display", "none", "important");
-    btnPuntaje.style.setProperty("display", "none", "important");
-    contenedor.style.setProperty("display", "none", "important");
 };
 
 function mostrarSecciones() {
     esconderSection.style.setProperty("display", "block", "important");
     esconderFooter.style.setProperty("display", "block", "important");
-    btnPuntaje.style.setProperty("display", "", "important"); 
-    contenedor.style.setProperty("display", "", "important");
 };
 
 //Storage.
