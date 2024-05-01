@@ -25,9 +25,3 @@ También a modo de prensentación creé una landing page, desde donde se puede a
 Se utilizaron las siguientes librerías:
 * Bootstrap (clases de estilo).
 * p5.js (creación de canva y render de los objetos)
-
-
-
-## Expresiones de Gratitud 🎁
-
-Estoy totalmente agradecido a Coderhouse por la oportunidad de seguir aprendiendo y sumar experiencia; y a mi excelente profesora **Florencia Hendel** - [Flor](https://github.com/florenciahendel) por lo didácticas que han sido sus clases y enseñarme nuevas herramientas :raised_hands:
